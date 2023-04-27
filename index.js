@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+
+const app = require('./app.js')
 const dotenv = require('dotenv');
 const { default: mongoose } = require('mongoose');
 dotenv.config({path: './.env'})
@@ -13,5 +13,5 @@ mongoose.connect(DATABASE_URL, {
 }).then((conncection) => console.log("connected to mongodb"))
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
